@@ -1,6 +1,66 @@
+// global variables 
+var kylo = {
+    health : "100",
+    attack : "170"
+}
 
-// When the game starts, the player will choose a character by clicking on the fighter's picture. The player will fight as that character for the rest of the game.
+var rey = {
+    health : "100",
+    attack : "150",
+}
+   
+var luke = {
+    health : "100",
+    attack : "140",
+}
 
+var yoda = {
+    health : "100",
+    attack : "160",
+}
+
+// gameplay variables
+
+var userPlayer;
+var hasPlayer = false;
+var currentOpponent;
+var hasOpponent = false;
+
+var resetGame = function(){
+
+    // yoda reset
+    kylo.health = "100";
+    kylo.attack = "170";
+    $("#kyloStats").html("Health: " + kylo.health + " Attack: " + kylo.attack);
+
+    // rey reset
+    rey.health = "100";
+    rey.attack = "150";
+    $("#reyStats").html("Health: " + rey.health + " Attack: " + rey.attack);
+
+    // luke reset 
+    luke.health = "100";
+    luke.health = "140";
+    $("#lukeStats").html("Health: " + luke.health + " Attack: " + luke.attack);
+
+    // darthRevan reset
+    yoda.health = "100";
+    yoda.attack = "160";
+    $("#yodaStats").html("Health: " + yoda.health + " Attack: " + yoda.attack);
+
+    // gameplay reset
+    userPlayer = null;
+    hasPlayer = false;
+    currentOpponent = null;
+    hasOpponent = false;
+
+    startGame();
+
+}
+
+var startGame = function(){
+
+}
 // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
 
 // The player chooses an opponent by clicking on an enemy's picture.
