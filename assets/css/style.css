@@ -42,6 +42,7 @@ h1 {
     float: left;
 }
 
+/* pictures used to select */
 #yoda,
 #rey,
 #luke,
@@ -58,6 +59,55 @@ h1 {
     width: 100px;
     text-shadow: .5px .5px black;
     margin-left: 10%;
+}
+
+.battleGround {
+    width: 90%;
+    margin-left: 5%;
+    height: 250px;
+}
+
+#graveyard {
+    width: 80%;
+    margin-left: 10%;
+    height: 250px;
+}
+
+#userChar {
+    float: left;
+}
+
+#currentOpp {
+    float: right;
+}
+
+/* pictures used to display as user char */
+#userKylo,
+#userRey,
+#userLuke,
+#userYoda {
+    display: none;
+    width: auto;
+    height: 250px;
+}
+
+#oppKylo,
+#oppRey,
+#oppLuke,
+#oppYoda {
+    display: none;
+    height: 250px;
+}
+
+/* graveyard pictures */
+#deadKylo,
+#deadRey,
+#deadLuke,
+#deadYoda {
+    display: none;
+    height: 150px;
+    float: left;
+    margin: 30px;
 }
 
 /* ============================================================================================== 

@@ -41,7 +41,7 @@ var resetGame = function(){
 
     // luke reset 
     luke.health = "100";
-    luke.health = "140";
+    luke.attack = "140";
     $("#lukeStats").html("Health: " + luke.health + " Attack: " + luke.attack);
 
     // yoda reset
@@ -61,27 +61,34 @@ var resetGame = function(){
 
 // used to select userChar and Opp
 var startGame = function(){
-    $("#kylo").on("click", function(){
-        // move kylo to users character
-        userChar = kylo;
-        hasChar = true;
-    });
-    $("#rey").on("click", function(){
-        // move rey to users char div
-        userChar = rey;
-        hasChar = true;
-    });
-    $("#luke").on("click", function(){
-        // move luke to users char div
-        userChar = luke;
-        hasChar = true;
-    });
-    $("#yoda").on("click", function(){
-        // move rey to users char div
-        userChar = yoda;
-        hasChar = true;
-    });
-}
+    if (!hasChar){
+        $("#kylo").on("click", function(){
+            // move kylo to users character
+            userChar = kylo;
+            $("#userKylo").attr("display: block")
+            hasChar = true;
+        });
+        $("#rey").on("click", function(){
+            // move rey to users char div
+            $("#userRey").attr("display: block")
+            userChar = rey;
+            hasChar = true;
+        });
+        $("#luke").on("click", function(){
+            // move luke to users char div
+            $("#userLuke").attr("display", "block")
+            userChar = luke;
+            hasChar = true;
+        });
+        $("#yoda").on("click", function(){
+            // move rey to users char div
+            $("#userYoda").attr("display", "block")
+            userChar = yoda;
+            hasChar = true;
+        });
+    }
+    console.log(hasChar);
+};
 
 // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
 
