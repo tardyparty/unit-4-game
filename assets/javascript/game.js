@@ -21,14 +21,15 @@ var yoda = {
 
 // gameplay variables
 
-var userPlayer;
-var hasPlayer = false;
-var currentOpponent;
-var hasOpponent = false;
+var userChar;
+var hasChar = false;
+var currentOpp;
+var hasOpp = false;
 
+// resets all game variables to start new game
 var resetGame = function(){
 
-    // yoda reset
+    // kylo reset
     kylo.health = "100";
     kylo.attack = "170";
     $("#kyloStats").html("Health: " + kylo.health + " Attack: " + kylo.attack);
@@ -43,24 +44,45 @@ var resetGame = function(){
     luke.health = "140";
     $("#lukeStats").html("Health: " + luke.health + " Attack: " + luke.attack);
 
-    // darthRevan reset
+    // yoda reset
     yoda.health = "100";
     yoda.attack = "160";
     $("#yodaStats").html("Health: " + yoda.health + " Attack: " + yoda.attack);
 
     // gameplay reset
-    userPlayer = null;
-    hasPlayer = false;
-    currentOpponent = null;
-    hasOpponent = false;
+    userChar = null;
+    hasChar = false;
+    currentOpp = null;
+    hasOpp = false;
 
     startGame();
 
 }
 
+// used to select userChar and Opp
 var startGame = function(){
-
+    $("#kylo").on("click", function(){
+        // move kylo to users character
+        userChar = kylo;
+        hasChar = true;
+    });
+    $("#rey").on("click", function(){
+        // move rey to users char div
+        userChar = rey;
+        hasChar = true;
+    });
+    $("#luke").on("click", function(){
+        // move luke to users char div
+        userChar = luke;
+        hasChar = true;
+    });
+    $("#yoda").on("click", function(){
+        // move rey to users char div
+        userChar = yoda;
+        hasChar = true;
+    });
 }
+
 // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
 
 // The player chooses an opponent by clicking on an enemy's picture.
