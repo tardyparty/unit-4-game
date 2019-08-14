@@ -1,7 +1,7 @@
 // global variables 
 var kylo = {
     health : "100",
-    attack : "170"
+    attack : "170",
 }
 
 var rey = {
@@ -21,9 +21,9 @@ var yoda = {
 
 // gameplay variables
 
-var userChar;
+var userChar = "";
 var hasChar = false;
-var currentOpp;
+var currentOpp = "";
 var hasOpp = false;
 
 // resets all game variables to start new game
@@ -32,27 +32,31 @@ var resetGame = function(){
     // kylo reset
     kylo.health = "100";
     kylo.attack = "170";
+    $("#kylo").attr("src", "assets/images/ren.png");
     $("#kyloStats").html("Health: " + kylo.health + " Attack: " + kylo.attack);
 
     // rey reset
     rey.health = "100";
     rey.attack = "150";
+    $("#rey").attr("src", "assets/images/starwars_PNG41.png");
     $("#reyStats").html("Health: " + rey.health + " Attack: " + rey.attack);
 
     // luke reset 
     luke.health = "100";
     luke.attack = "140";
+    $("#luke").attr("src", "assets/images/starwars_PNG5.png");
     $("#lukeStats").html("Health: " + luke.health + " Attack: " + luke.attack);
 
     // yoda reset
     yoda.health = "100";
     yoda.attack = "160";
+    $("#yoda").attr("src", "assets/images/yoda.png");
     $("#yodaStats").html("Health: " + yoda.health + " Attack: " + yoda.attack);
 
     // gameplay reset
-    userChar = null;
+    userChar = "";
     hasChar = false;
-    currentOpp = null;
+    currentOpp = "";
     hasOpp = false;
 
     startGame();
@@ -61,32 +65,35 @@ var resetGame = function(){
 
 // used to select userChar and Opp
 var startGame = function(){
-    if (!hasChar){
-        $("#kylo").on("click", function(){
-            // move kylo to users character
+    $("#kylo").on("click", function(){
+        if (!hasChar){
+            $("#userChar").attr("src", "assets/images/ren.png")
+            hasChar = true;
             userChar = kylo;
-            $("#userKylo").attr("display: block")
+        }
+    });
+    $("#rey").on("click", function(){
+        if (!hasChar){
+            $("#userChar").attr("src", "assets/images/starwars_PNG41.png")
             hasChar = true;
-        });
-        $("#rey").on("click", function(){
-            // move rey to users char div
-            $("#userRey").attr("display: block")
-            userChar = rey;
+            userChar = kylo;
+        }
+    });
+    $("#luke").on("click", function(){
+        if (!hasChar){
+            $("#userChar").attr("src", "assets/images/starwars_PNG5.png")
             hasChar = true;
-        });
-        $("#luke").on("click", function(){
-            // move luke to users char div
-            $("#userLuke").attr("display", "block")
-            userChar = luke;
+            userChar = kylo;
+        }
+    });
+    $("#yoda").on("click", function(){
+        if (!hasChar){
+            $("#userChar").attr("src", "assets/images/yoda.png")
             hasChar = true;
-        });
-        $("#yoda").on("click", function(){
-            // move rey to users char div
-            $("#userYoda").attr("display", "block")
-            userChar = yoda;
-            hasChar = true;
-        });
-    }
+            userChar = kylo;
+        }
+    });
+    console.log(userChar);
     console.log(hasChar);
 };
 
