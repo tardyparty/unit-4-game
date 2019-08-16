@@ -19,48 +19,37 @@
             <div class="charOptions">
                 <h1>Choose Your Character</h1>
                 <div class="chooseChar kylo">
-                    <img id="kylo" alt="Ren">
-                    <div class="name">
-                        Kylo
-                        <div id="kyloStats">
-                        </div>
-                    </div>
+                    <div id="kylo"></div>
+                    <div id="nameKylo" class="name"></div>
+                    <div id="kyloStats" class="stats"></div>   
                 </div>
                 <div class="chooseChar rey">
                     <img id="rey" alt="Rey">
-                    <div class="name">
-                        Rey
-                        <div id="reyStats">
-                        </div>
-                    </div>
+                    <div id="nameRey" class="name"></div>
+                    <div id="reyStats" class="stats"></div>
                 </div>
                 <div class="chooseChar luke">
                     <img id="luke" alt="Luke">
-                    <div class="name">
-                        Luke
-                        <div id="lukeStats">
-                        </div>
-                    </div>
+                    <div id="nameLuke" class="name"></div>
+                    <div id="lukeStats" class="stats"></div>
                 </div>
                 <div class="chooseChar yoda">
                     <img id="yoda" alt="Yoda">
-                    <div class="name">
-                        Yoda
-                        <div id="yodaStats">
-                        </div>
-                    </div>
+                    <div id="nameYoda" class="name"></div>
+                    <div id="yodaStats" class="stats"></div>
                 </div>
             </div>
             <div class="battleGround">
-                <div>
-                    <img  id="userChar">
+                <div width="33.33%">
+                    <div id="userChar"></div>
+                    <div id="userName"></div>
+                    <div id="userStats"></div>
+                </div>
+                <div width="33.33%">
                     <button id="attackButton">Attack!</button>
                 </div>
-                <div id="currentOpp" class="fight">
-                    <img id="oppKylo" src="assets/images/ren.png" alt="Ren">
-                    <img id="oppRey" src="assets/images/starwars_PNG41.png" alt="Rey">
-                    <img id="oppLuke" src="assets/images/starwars_PNG5.png" alt="Luke">
-                    <img id="oppYoda" src="assets/images/yoda.png" alt="Yoda">
+                <div width="33.33%">
+                    <div id="currentOpp">hi</div>
                 </div>
             </div>
             <div id="graveyard">
@@ -72,7 +61,6 @@
         </section>
         <script>
             resetGame();
-            console.log(userChar);
         </script>
     </body>
 </html>

@@ -46,11 +46,11 @@ h1 {
 #yoda,
 #rey,
 #luke,
-#kylo {
+.firstImg {
     height: 150px;
 }
 
-.name {
+.stats {
     position: absolute;
     bottom: -50px;
     font-size: 18px;
@@ -62,9 +62,37 @@ h1 {
 }
 
 .battleGround {
+    position: relative;
     width: 90%;
     margin-left: 5%;
     height: 250px;
+    margin-top: 50px;
+    padding: 10px;
+    border: 2px solid red ;
+}
+
+#myChar {
+    height: 200px;
+}
+
+#userStats {
+    position: absolute;
+    bottom: 3px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#userName {
+    position: absolute;
+    bottom: 25px;
+    font-size: 22px;
+    width: 150px;
+    text-align: center;
+}
+
+#currentOpp {
+    float: right;
 }
 
 #graveyard {
@@ -73,21 +101,13 @@ h1 {
     height: 250px;
 }
 
-#userChar {
-    float: left;
-}
 
-#currentOpp {
-    float: right;
-}
 
 /* pictures used to display as user char */
-#userKylo,
-#userRey,
-#userLuke,
-#userYoda {
-    display: none;
+
+#userChar {
     width: auto;
+    float: left;
     height: 250px;
 }
 
