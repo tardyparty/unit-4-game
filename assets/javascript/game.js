@@ -36,30 +36,26 @@ var resetGame = function(){
     // kylo reset
     kylo.HP = "100";
     kylo.attack = "170";
-    $("#kylo").html("<img class='firstImg' src='assets/images/ren.png'>");
-    $("#nameKylo").html(kylo.name);
-    $("#kyloStats").html("HP: " + kylo.HP + " Attack: " + kylo.attack);
+    $("#kylo").attr("src", "assets/images/ren.png");
+    $("#kyloStats").html(kylo.name + " HP: " + kylo.HP);
 
     // rey reset
     rey.HP = "100";
     rey.attack = "150";
     $("#rey").attr("src", "assets/images/starwars_PNG41.png");
-    $("#nameRey").html(rey.name);
-    $("#reyStats").html("HP: " + rey.HP + " Attack: " + rey.attack);
+    $("#reyStats").html(rey.name + " HP: " + rey.HP);
 
     // luke reset 
     luke.HP = "100";
     luke.attack = "140";
     $("#luke").attr("src", "assets/images/starwars_PNG5.png");
-    $("#nameLuke").html(luke.name);
-    $("#lukeStats").html("HP: " + luke.HP + " Attack: " + luke.attack);
+    $("#lukeStats").html(luke.name + " HP: " + luke.HP);
 
     // yoda reset
     yoda.HP = "100";
     yoda.attack = "160";
     $("#yoda").attr("src", "assets/images/yoda.png");
-    $("#nameYoda").html(yoda.name);
-    $("#yodaStats").html("HP: " + yoda.HP + " Attack: " + yoda.attack);
+    $("#yodaStats").html(yoda.name + " HP: " + yoda.HP);
 
     // gameplay reset
     userChar = "";
@@ -77,78 +73,144 @@ var startGame = function(){
         if (!hasChar){
             // adding kylo stats to new div
             $("#userChar").html("<img id='myChar' src='assets/images/ren.png'>");
-            $("#userStats").html("HP: " + kylo.HP + " Attack: " + kylo.attack);
-            $("#userName").html(kylo.name)
+            $("#userStats").html(kylo.name + " HP: " + kylo.HP); 
 
             // removing kylo from old div
             $("#kylo").remove();
             $("#kyloStats").remove();
-            $("#nameKylo").remove();
 
             // updating gameplay variables
             hasChar = true;
             userChar = kylo
-        });
-    }
+        }
+    });
+
     $("#rey").on("click", function(){
         if (!hasChar){
             // adding rey stats to new div
             $("#userChar").html("<img id='myChar' src='assets/images/starwars_PNG41.png'>");
-            $("#userStats").html("HP: " + rey.HP + " Attack: " + rey.attack);
-            $("#userName").html(rey.name);
+            $("#userStats").html(rey.name + " HP: " + rey.HP);
 
             // removing rey from old div
             $("#rey").remove();
             $("#reyStats").remove();
-            $("#nameRey").remove();
 
             // updating gameplay variables
             hasChar = true;
             userChar = rey;
-        });
-    }
+        }
+    });
+
     $("#luke").on("click", function(){
         if (!hasChar){
             // adding luke stats to new div
             $("#userChar").html("<img id='myChar' src='assets/images/starwars_PNG5.png'>");
-            $("#userStats").html("HP: " + luke.HP + " Attack: " + luke.attack);
-            $("#userName").html(luke.name);
+            $("#userStats").html(luke.name + " HP: " + luke.HP);
 
             // removing luke from old div
             $("#luke").remove();
             $("#lukeStats").remove();
-            $("#nameLuke").remove();
 
             // updating gameplay variables
             hasChar = true;
             userChar = luke;
-        });
-    }
+        }
+    });
+
     $("#yoda").on("click", function(){
         if (!hasChar){
             // adding luke stats to new div
             $("#userChar").html("<img id='myChar' src='assets/images/yoda.png'>");
-            $("#userStats").html("HP: " + yoda.HP + " Attack: " + yoda.attack);
-            $("#userName").html(yoda.name);
+            $("#userStats").html(yoda.name + " HP: " + yoda.HP);
 
             // removing luke from old div
             $("#yoda").remove();
             $("#yodaStats").remove();
-            $("#nameYoda").remove();
 
             // updating gameplay variables
             hasChar = true;
             userChar = yoda;
-        });
-    }
-    
+        }
+    });
+
+  selectOpp(); 
+
 };
 
+var selectOpp = function(){
+    $("#kylo").on("click", function(){
+        if (hasChar){
+            // adding kylo stats to new div
+            $("#currentOpp").html("<img id='opp' src='assets/images/ren.png'>");
+            $("#oppStats").html(kylo.name + " HP: " + kylo.HP); 
+
+            // removing kylo from old div
+            $("#kylo").remove();
+            $("#kyloStats").remove();
+
+            // updating gameplay variables
+            hasOpp = true;
+            currentOpp = kylo
+        }
+    });
+
+    $("#rey").on("click", function(){
+        if (hasChar){
+            // adding rey stats to new div
+            $("#currentOpp").html("<img id='opp' src='assets/images/starwars_PNG41.png'>");
+            $("#oppStats").html(rey.name + " HP: " + rey.HP);
+
+            // removing rey from old div
+            $("#rey").remove();
+            $("#reyStats").remove();
+
+            // updating gameplay variables
+            hasOpp = true;
+            currentOpp = rey;
+        }
+    });
+
+    $("#luke").on("click", function(){
+        if (hasChar){
+            // adding luke stats to new div
+            $("#currentOpp").html("<img id='opp' src='assets/images/starwars_PNG5.png'>");
+            $("#oppStats").html(luke.name + " HP: " + luke.HP);
+
+            // removing luke from old div
+            $("#luke").remove();
+            $("#lukeStats").remove();
+
+            // updating gameplay variables
+            hasOpp = true;
+            currentOpp = luke;
+        }
+    });
+
+    $("#yoda").on("click", function(){
+        if (hasChar){
+            // adding luke stats to new div
+            $("#currentOpp").html("<img id='opp' src='assets/images/yoda.png'>");
+            $("#oppStats").html(yoda.name + " HP: " + yoda.HP);
+
+            // removing luke from old div
+            $("#yoda").remove();
+            $("#yodaStats").remove();
+
+            // updating gameplay variables
+            hasOpp = true;
+            currentOpp = yoda;
+        }
+    });
+
+    attack();
+
+}
+
+var attack = function(){
+    
+}
+
 // The player must then defeat all of the remaining fighters. Enemies should be moved to a different area of the screen.
-
-// The player chooses an opponent by clicking on an enemy's picture.
-
-// Once the player selects an opponent, that enemy is moved to a defender area.
 
 // The player will now be able to click the attack button.
 
