@@ -72,12 +72,12 @@ h1 {
 
 #myChar {
     margin: 20px;
-    height: 325px;
+    height: 300px;
 }
 
 #opp {
     margin: 20px;
-    height: 325px;
+    height: 300px;
 }
 
 #userStats {
@@ -106,8 +106,9 @@ h1 {
 #attackButton {
     width: 125px;
     height: 50px;
-    background-color: red;
-    color: white;
+    border: 2px solid red;
+    color: red;
+    margin-top: 125px;
     padding-top: 15px;
     font-size: 35px;
     text-align: center;

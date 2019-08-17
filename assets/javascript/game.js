@@ -192,19 +192,20 @@ var selectOpp = function(){
             hasOpp = true;
             currentOpp = yoda;
         }
-    });
 
+    });
+console.log(userChar);
     attack();
 
 }
 
+
 var attack = function(){
-    opp = Math.floor(Math.random() * 28);
-    user = Math.floor(Math.random() * 28);
-        if (hasChar && hasOpp) {
-            $("#attackButton").on("click", function(){
-            currentOpp.HP = currentOpp.HP - opp;
-            userChar.HP = userChar.HP - user;
-        })
-    }
+    $("#attackButton").on("click", function(){
+        currentOpp.HP = currentOpp.HP - Math.floor(Math.random() * 28);;
+        userChar.HP = userChar.HP - Math.floor(Math.random() * 28);;
+    });
+
+    attack();
+
 }
